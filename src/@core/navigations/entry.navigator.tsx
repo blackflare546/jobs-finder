@@ -1,7 +1,8 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import { LandingScreen } from "../../scenes/Entry";
+import { LandingScreen, SigninScreen } from "../../scenes/Entry";
+import { RootStackParamList } from "../../types";
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator<keyof RootStackParamList["Entry"]>();
 
 export const EntryNavigator = () => {
   return (
@@ -11,6 +12,7 @@ export const EntryNavigator = () => {
       }}
     >
       <Stack.Screen name="Landing" component={LandingScreen} />
+      <Stack.Screen name="Signin" component={SigninScreen} />
     </Stack.Navigator>
   );
 };

@@ -8,8 +8,6 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useSignin } from "../hooks/use-signin.hooks";
 import { Controller, useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
-import { loginValidateSchema } from "../validations/login.validate";
 
 const styles = StyleSheet.create({
   Layout: {

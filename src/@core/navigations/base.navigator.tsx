@@ -3,6 +3,7 @@ import { EntryNavigator } from "./entry.navigator";
 import { MainBottomTabParamList, RootStackParamList } from "../../types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text } from "react-native";
+import { JobsScreen, ProfileScreen } from "../../scenes/Main";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -35,24 +36,8 @@ const BottomTab = createBottomTabNavigator<MainBottomTabParamList>();
 const MainBottomTabNavigator = () => {
   return (
     <BottomTab.Navigator>
-      <BottomTab.Screen name="Profile Bottom Tab" component={HomeScreen} />
-      <BottomTab.Screen name="Jobs Bottom Tab" component={SettingsScreen} />
+      <BottomTab.Screen name="Profile Bottom Tab" component={ProfileScreen} />
+      <BottomTab.Screen name="Jobs Bottom Tab" component={JobsScreen} />
     </BottomTab.Navigator>
-  );
-};
-
-const HomeScreen = () => {
-  return (
-    <View>
-      <Text>Home Screen</Text>
-    </View>
-  );
-};
-
-const SettingsScreen = () => {
-  return (
-    <View>
-      <Text>Settings Screen</Text>
-    </View>
   );
 };

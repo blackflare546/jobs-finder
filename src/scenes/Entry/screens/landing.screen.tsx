@@ -1,13 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import {
-  SafeAreaView,
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { Image, TouchableOpacity } from "react-native";
 import {
   Container,
   Footer,

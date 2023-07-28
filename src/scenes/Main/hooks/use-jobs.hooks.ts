@@ -21,6 +21,6 @@ const getAllJobs = async () => {
 };
 
 export const useJobs = () => {
-  const { isLoading, data } = useQuery(["allAnime"], getAllJobs);
+  const { isLoading, data } = useQuery(["allJobs"], getAllJobs);
   return { data, isLoading };
 };

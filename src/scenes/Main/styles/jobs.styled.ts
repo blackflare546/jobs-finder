@@ -1,5 +1,11 @@
 import styled from "styled-components/native";
 
+export const Layout = styled.SafeAreaView`
+  flex: 1;
+  padding: 15px;
+  backgroundcolor: #e5e5e5;
+`;
+
 export const Container = styled.View`
   background-color: #fff;
   height: 100px;

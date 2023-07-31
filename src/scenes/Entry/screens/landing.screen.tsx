@@ -1,6 +1,6 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
-import { Image, TouchableOpacity } from "react-native";
+import { Image } from "react-native";
 import {
   Container,
   Footer,

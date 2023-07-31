@@ -12,6 +12,7 @@ export const Container = styled.View`
   align-content: center;
   gap: 25px;
 `;
+
 export const Header = styled.View`
   align-items: flex-end;
 `;

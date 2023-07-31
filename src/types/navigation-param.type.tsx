@@ -1,5 +1,7 @@
 import { NavigatorScreenParams } from "@react-navigation/native";
 
+// TODO: Refactor Navigation
+
 declare global {
   namespace ReactNavigation {
     interface RootParamList

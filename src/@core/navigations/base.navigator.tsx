@@ -8,7 +8,7 @@ import { JobsScreen, ProfileScreen } from "../../scenes/Main";
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export function RootNavigator() {
-  const initialRouteName: keyof RootStackParamList = "Entry";
+  const initialRouteName: keyof RootStackParamList = "Main";
 
   return (
     <Stack.Navigator initialRouteName={initialRouteName}>

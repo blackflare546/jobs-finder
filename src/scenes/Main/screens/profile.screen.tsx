@@ -1,6 +1,12 @@
 import React from "react";
-import { View, TextInput, Text, StyleSheet } from "react-native";
+import { Text } from "react-native";
 import { useProfileStore } from "../store";
+import {
+  FieldText,
+  Label,
+  Layout,
+  MultiLineText,
+} from "../styles/profile.styled";
 
 const ProfileScreen = () => {
   const name = useProfileStore((state) => state.name);
@@ -11,49 +17,31 @@ const ProfileScreen = () => {
   const updateAddress = useProfileStore((state) => state.updateAddress);
 
   return (
-    <View style={{ padding: 15 }}>
-      <Text>Name</Text>
-      <TextInput
+    <Layout>
+      <Label>Name</Label>
+      <FieldText
         placeholder="name"
-        style={styles.TextField}
         value={name}
-        onChangeText={(text) => updateName(text)}
+        onChangeText={(text: string) => updateName(text)}
       />
 
-      <Text>Age</Text>
-      <TextInput
+      <Label>Age</Label>
+      <FieldText
         placeholder="Age"
-        style={styles.TextField}
         value={age}
-        onChangeText={(text) => updateAge(text)}
+        onChangeText={(text: string) => updateAge(text)}
       />
 
-      <Text>Address</Text>
-      <TextInput
+      <Label>Address</Label>
+      <MultiLineText
         placeholder="name"
-        style={styles.Address}
         value={address}
         multiline={true}
         numberOfLines={4}
-        onChangeText={(text) => updateAddress(text)}
+        onChangeText={(text: string) => updateAddress(text)}
       />
-    </View>
+    </Layout>
   );
 };
-
-const styles = StyleSheet.create({
-  TextField: {
-    backgroundColor: "#fff",
-    height: 50,
-    borderRadius: 10,
-    padding: 15,
-  },
-  Address: {
-    backgroundColor: "#fff",
-    height: 100,
-    borderRadius: 10,
-    padding: 15,
-  },
-});
 
 export default ProfileScreen;

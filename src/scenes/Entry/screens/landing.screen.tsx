@@ -7,8 +7,10 @@ import {
   Header,
   HightLighted,
   Jobspot,
+  LandingImage,
   Layout,
   MainText,
+  SinginButton,
   SubTitle,
 } from "../styles/landings.styled";
 
@@ -21,8 +23,7 @@ export default () => {
         <Header>
           <Jobspot>Job Spot</Jobspot>
         </Header>
-        <Image
-          style={{ resizeMode: "contain", width: "100%" }}
+        <LandingImage
           source={require("../../../../assets/Landing-Image.png")}
         />
         <Footer>
@@ -33,12 +34,11 @@ export default () => {
             Explore all the most exciting job roles based on your interest and
             study major.
           </SubTitle>
-          <TouchableOpacity
-            style={{ marginLeft: "auto" }}
+          <SinginButton
             onPress={() => navigation.navigate("Entry", { screen: "Signin" })}
           >
             <Image source={require("../../../../assets/Back.png")} />
-          </TouchableOpacity>
+          </SinginButton>
         </Footer>
       </Container>
     </Layout>

@@ -1,21 +1,13 @@
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { IProfileState } from "../../../stores/interface/profile-state.interface";
 
-interface ProfileState {
-  name: string;
-  updateName: (name: string) => void;
-  age: string;
-  updateAge: (age: string) => void;
-  address: string;
-  updateAddress: (address: string) => void;
-}
-
-export default create<ProfileState>()(
+export default create<IProfileState>()(
   persist(
     (set) => ({
       name: "",
-      age: "",
+      age: "0",
       address: "",
       updateName: (name: string) => set({ name }),
       updateAge: (age: string) => set({ age }),

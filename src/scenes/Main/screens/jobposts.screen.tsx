@@ -1,19 +1,8 @@
 import { Text } from "react-native";
 import { CompanyInfo, Container, JobTitle } from "../styles/jobs.styled";
+import { IJobPostsProps } from "../../../stores/interface/jobs-screen.interface";
 
-interface JobPostItem {
-  employer_name: string;
-  company: string;
-  job_title: string;
-  job_country: string;
-  employer_logo: string;
-}
-
-interface JobPostsProps {
-  item: JobPostItem;
-}
-
-export const JobPosts: React.FC<JobPostsProps> = ({ item }) => {
+export const JobPosts: React.FC<IJobPostsProps> = ({ item }) => {
   return (
     <Container>
       <JobTitle>{item.job_title}</JobTitle>

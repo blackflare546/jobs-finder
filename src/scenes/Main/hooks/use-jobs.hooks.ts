@@ -6,7 +6,7 @@ export const useJobs = () => {
     method: "GET",
     url: "https://jsearch.p.rapidapi.com/search",
     params: {
-      query: "Python developer in Texas, USA",
+      query: "React Native in Singapore",
       page: "1",
       num_pages: "1",
     },

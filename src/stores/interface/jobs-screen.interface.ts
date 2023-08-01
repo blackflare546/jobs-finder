@@ -1,4 +1,5 @@
 interface IJobPostItem {
+  // API uses Snake_Case
   employer_name: string;
   company: string;
   job_title: string;

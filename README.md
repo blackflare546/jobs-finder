@@ -11,6 +11,7 @@
 7. Update useQuery, add queryKey, queryFn
 8. Add a second layer of Navigation
 9. Add a Job Details Screen
+10. Use camelCase, [Be Consistent] - Check interfaces
 
 ### Next Features
 

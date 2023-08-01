@@ -24,8 +24,8 @@ export const useSignin = () => {
 
   const onSubmit = (formData: ISigninForm) => {
     if (formData) {
-      // Navigate to Main Screen
       console.log(formData);
+      // Navigate to Main Screen
       navigation.navigate("Main", { screen: "Profile Bottom Tab" });
     }
   };

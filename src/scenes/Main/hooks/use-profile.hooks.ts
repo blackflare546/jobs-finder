@@ -1,10 +1,9 @@
-// UseProfile.ts
-
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
 import { profileValidateSchema } from "../validations/profile.validate";
 import { useProfileStore } from "../store";
 import { Alert } from "react-native";
+import { IProfileFormData } from "../../../stores/interface/profile-form.interface";
 
 export const useProfile = () => {
   const name = useProfileStore((state) => state.name);
@@ -30,13 +29,7 @@ export const useProfile = () => {
     resolver: yupResolver(profileValidateSchema),
   });
 
-  interface FormData {
-    name: string;
-    age: string;
-    address: string;
-  }
-
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: IProfileFormData) => {
     updateName(data.name);
     updateAge(data.age);
     updateAddress(data.address);

@@ -16,8 +16,6 @@ import {
 export default () => {
   const { control, handleSubmit, onSubmit, errors } = useSignin();
 
-  // TODO: Persist Data on Email
-
   return (
     <SafeAreaView>
       <Layout>

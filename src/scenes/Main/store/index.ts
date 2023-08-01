@@ -1,1 +1,1 @@
-export { default as useProfileStore } from "./use-profile";
+export { default as useProfileStore } from "./use-profile.store";

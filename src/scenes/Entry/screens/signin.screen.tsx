@@ -16,6 +16,8 @@ import {
 export default () => {
   const { control, handleSubmit, onSubmit, errors } = useSignin();
 
+  // TODO: Persist Data on Email
+
   return (
     <SafeAreaView>
       <Layout>
@@ -33,7 +35,7 @@ export default () => {
                   autoCapitalize="none"
                   placeholder="john.doe@gmail.com"
                   onBlur={onBlur}
-                  onChangeText={onChange}
+                  onChangeText={(text: string) => onChange(text)}
                   value={value}
                 />
               )}

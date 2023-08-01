@@ -1,45 +1,81 @@
 import React from "react";
-import { Text } from "react-native";
-import { useProfileStore } from "../store";
 import {
+  Errors,
   FieldText,
   Label,
   Layout,
   MultiLineText,
+  Save,
+  SaveButton,
 } from "../styles/profile.styled";
+import { useProfile } from "../hooks/use-profile.hooks";
+import { Controller } from "react-hook-form";
 
 const ProfileScreen = () => {
-  const name = useProfileStore((state) => state.name);
-  const age = useProfileStore((state) => state.age);
-  const address = useProfileStore((state) => state.address);
-  const updateName = useProfileStore((state) => state.updateName);
-  const updateAge = useProfileStore((state) => state.updateAge);
-  const updateAddress = useProfileStore((state) => state.updateAddress);
+  const { control, handleSubmit, onSubmit, errors } = useProfile();
 
   return (
     <Layout>
       <Label>Name</Label>
-      <FieldText
-        placeholder="name"
-        value={name}
-        onChangeText={(text: string) => updateName(text)}
+      <Controller
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <FieldText
+            autoCapitalize="none"
+            placeholder="John Doe"
+            onBlur={onBlur}
+            onChangeText={(text: string) => onChange(text)}
+            value={value}
+          />
+        )}
+        name="name"
       />
+      {errors.name && <Errors>{errors.name.message}</Errors>}
 
       <Label>Age</Label>
-      <FieldText
-        placeholder="Age"
-        value={age}
-        onChangeText={(text: string) => updateAge(text)}
+      <Controller
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <FieldText
+            placeholder="24"
+            onBlur={onBlur}
+            onChangeText={(age: string) => onChange(age)}
+            value={value}
+          />
+        )}
+        name="age"
       />
+      {errors.age && <Errors>{errors.age.message}</Errors>}
 
       <Label>Address</Label>
-      <MultiLineText
-        placeholder="name"
-        value={address}
-        multiline={true}
-        numberOfLines={4}
-        onChangeText={(text: string) => updateAddress(text)}
+      <Controller
+        control={control}
+        rules={{
+          required: true,
+        }}
+        render={({ field: { onChange, onBlur, value } }) => (
+          <MultiLineText
+            placeholder="Building No., Street, City"
+            onBlur={onBlur}
+            multiline={true}
+            numberOfLines={4}
+            onChangeText={(address: string) => onChange(address)}
+            value={value}
+          />
+        )}
+        name="address"
       />
+      {errors.address && <Errors>{errors.address.message}</Errors>}
+
+      <SaveButton onPress={handleSubmit(onSubmit)}>
+        <Save>Save</Save>
+      </SaveButton>
     </Layout>
   );
 };

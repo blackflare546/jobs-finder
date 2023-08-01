@@ -32,7 +32,7 @@ export const Forms = styled.View`
 `;
 
 export const LoginButton = styled.TouchableOpacity`
-  margin-top: 20;
+  margin-top: 20px;
   background-color: #130160;
   height: 50px;
   border-radius: 6px;

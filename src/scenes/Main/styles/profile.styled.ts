@@ -23,3 +23,23 @@ export const MultiLineText = styled.TextInput`
   border-radius: 10px;
   padding: 15px;
 `;
+
+export const Errors = styled.Text`
+  color: red;
+`;
+
+export const SaveButton = styled.TouchableOpacity`
+  margin-top: 15px;
+  background-color: #48bf53;
+  width: 50px;
+  height: 30px;
+  border-radius: 15px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Save = styled.Text`
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+`;

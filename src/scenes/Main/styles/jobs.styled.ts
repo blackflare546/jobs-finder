@@ -2,8 +2,10 @@ import styled from "styled-components/native";
 
 export const Layout = styled.SafeAreaView`
   flex: 1;
-  padding: 15px;
-  backgroundcolor: #e5e5e5;
+  background-color: #e5e5e5;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 `;
 
 export const Container = styled.View`

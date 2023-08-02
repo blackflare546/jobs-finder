@@ -27,3 +27,9 @@ export const CompanyInfo = styled.View`
   flex-direction: row;
   color: #524b6b;
 `;
+
+export const Errors = styled.View`
+  flex: 1;
+  justify-content: center;
+  aligni-items: center;
+`;

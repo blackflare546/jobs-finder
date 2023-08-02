@@ -21,6 +21,10 @@ export const useJobs = () => {
     return response.data;
   };
 
-  const { isLoading, data } = useQuery(["allJobs"], getAllJobs);
-  return { data, isLoading };
+  const { isLoading, data, isRefetching, refetch } = useQuery({
+    queryKey: ["allJobs"],
+    queryFn: getAllJobs,
+  });
+
+  return { data, isLoading, isRefetching, refetch };
 };

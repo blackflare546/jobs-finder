@@ -36,8 +36,8 @@ const BottomTab = createBottomTabNavigator<MainBottomTabParamList>();
 const MainBottomTabNavigator = () => {
   return (
     <BottomTab.Navigator>
-      <BottomTab.Screen name="Profile Bottom Tab" component={ProfileScreen} />
-      <BottomTab.Screen name="Jobs Bottom Tab" component={JobsScreen} />
+      <BottomTab.Screen name="My Profile" component={ProfileScreen} />
+      <BottomTab.Screen name="Search Jobs" component={JobsScreen} />
     </BottomTab.Navigator>
   );
 };

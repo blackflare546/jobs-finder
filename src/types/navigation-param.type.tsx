@@ -7,33 +7,36 @@ declare global {
     interface RootParamList
       extends RootStackParamList,
         EntryStackParamList,
+        MainBottomTabParamList,
         ProfileStackParamList,
         JobsStackParamList {}
   }
 }
+
+// Main Root Navigators
 export type RootStackParamList = {
   Entry: NavigatorScreenParams<EntryStackParamList> | undefined;
   Main: NavigatorScreenParams<MainBottomTabParamList> | undefined;
 };
 
+// Screen Routes
 export type EntryStackParamList = {
   Landing: undefined;
   Signin: undefined;
 };
 
+// Main Bottom Navigators
 export type MainBottomTabParamList = {
-  "Profile Bottom Tab":
-    | NavigatorScreenParams<ProfileStackParamList>
-    | undefined;
-  "Jobs Bottom Tab": NavigatorScreenParams<JobsStackParamList> | undefined;
+  "My Profile": NavigatorScreenParams<ProfileStackParamList> | undefined;
+  "Search Jobs": NavigatorScreenParams<JobsStackParamList> | undefined;
 };
 
-//DASHBOARD
+// Screen Routes
 export type ProfileStackParamList = {
-  Profile: undefined;
+  "Profile Screen": undefined;
 };
 
-//DASHBOARD
+// Screen Routes
 export type JobsStackParamList = {
-  Jobs: undefined;
+  "Jobs Details": undefined;
 };

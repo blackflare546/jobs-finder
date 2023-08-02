@@ -1,20 +1,18 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup/dist/yup";
-import { loginValidateSchema } from "../validations/login.validate";
 import { ISigninFormData } from "../../../stores/interface/signin-form.interface";
 import { useNavigation } from "@react-navigation/native";
 import { useSigninStore } from "../store";
+import { loginValidateSchema } from "../validations/login.validate";
 
 export const useSignin = () => {
   const navigation = useNavigation();
 
-  const email = useSigninStore((state) => state.email);
-  const password = useSigninStore((state) => state.password);
-  const updateEmail = useSigninStore((state) => state.updateEmail);
+  const { email, updateEmail } = useSigninStore((state) => state);
 
-  const defaultValues = {
+  const defaultValues: ISigninFormData = {
     email,
-    password,
+    password: "",
   };
 
   const {
@@ -28,8 +26,8 @@ export const useSignin = () => {
   });
 
   const onSubmit = (formData: ISigninFormData) => {
-    updateEmail(formData.email);
     if (formData) {
+      updateEmail(formData?.email);
       console.log(formData);
       // Navigate to Main Screen
       navigation.navigate("Main", { screen: "Profile Bottom Tab" });

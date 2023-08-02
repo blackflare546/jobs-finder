@@ -6,14 +6,10 @@ import { Alert } from "react-native";
 import { IProfileFormData } from "../../../stores/interface/profile-form.interface";
 
 export const useProfile = () => {
-  const name = useProfileStore((state) => state.name);
-  const age = useProfileStore((state) => state.age);
-  const address = useProfileStore((state) => state.address);
-  const updateName = useProfileStore((state) => state.updateName);
-  const updateAge = useProfileStore((state) => state.updateAge);
-  const updateAddress = useProfileStore((state) => state.updateAddress);
+  const { name, age, address, updateName, updateAge, updateAddress } =
+    useProfileStore((state) => state);
 
-  const defaultValues = {
+  const defaultValues: IProfileFormData = {
     name,
     age,
     address,
@@ -30,10 +26,11 @@ export const useProfile = () => {
   });
 
   const onSubmit = (data: IProfileFormData) => {
-    updateName(data.name);
-    updateAge(data.age);
+    updateName(data?.name);
+    updateAge(data?.age);
     updateAddress(data.address);
 
+    console.log(data);
     Alert.alert("Data Save");
   };
 

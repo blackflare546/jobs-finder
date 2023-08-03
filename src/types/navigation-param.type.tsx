@@ -1,7 +1,5 @@
 import { NavigatorScreenParams } from "@react-navigation/native";
 
-// TODO: Refactor Navigation
-
 declare global {
   namespace ReactNavigation {
     interface RootParamList
@@ -31,23 +29,18 @@ export type MainBottomTabParamList = {
   "Search Jobs": undefined;
 };
 
-// // Screen Routes
-// export type ProfileStackParamList = {
-//   "Profile Screen": undefined;
-// };
-
 // Job Stack Navigator
 export type JobRootStackParamList = {
-  Data: undefined;
+  Detail: { job: JobsData };
 };
 
-// // Screen Routes
-// export type JobsStackParamList = {
-//   Details: undefined;
-// };
-
-// export type JobsData = {
-//   job_id: string;
-//   job_title: string;
-//   job_country: string;
-// };
+export type JobsData = {
+  employer_name: string;
+  company: string;
+  job_title: string;
+  job_id: string;
+  job_country: string;
+  employer_logo: string;
+  job_description: string;
+  job_apply_link: string;
+};

@@ -6,7 +6,6 @@ import {
   RootStackParamList,
 } from "../../types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { View, Text } from "react-native";
 import { JobsScreen, ProfileScreen } from "../../scenes/Main";
 import JobDetails from "../../scenes/Main/screens/job-details.screen";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -61,7 +60,7 @@ const JobStack = createStackNavigator<JobRootStackParamList>();
 const JobStackNavigator = () => {
   return (
     <JobStack.Navigator>
-      <JobStack.Screen name="Data" component={JobDetails} />
+      <JobStack.Screen name="Detail" component={JobDetails} />
     </JobStack.Navigator>
   );
 };

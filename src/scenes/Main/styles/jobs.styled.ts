@@ -10,11 +10,16 @@ export const Layout = styled.SafeAreaView`
 
 export const Container = styled.View`
   background-color: #fff;
-  height: 100px;
+  height: 150px;
   border-radius: 20px;
   padding: 15px;
   justify-content: space-evenly;
   margin-vertical: 10px;
+`;
+
+export const Logo = styled.Image`
+  width: 66px;
+  height: 58px;
 `;
 
 export const JobTitle = styled.Text`

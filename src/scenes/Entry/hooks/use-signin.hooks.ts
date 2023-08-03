@@ -30,7 +30,7 @@ export const useSignin = () => {
       updateEmail(formData?.email);
       console.log(formData);
       // Navigate to Main Screen
-      navigation.navigate("Main", { screen: "Profile Bottom Tab" });
+      navigation.navigate("Main", { screen: "My Profile" });
     }
   };
 

@@ -8,8 +8,7 @@ declare global {
       extends RootStackParamList,
         EntryStackParamList,
         MainBottomTabParamList,
-        ProfileStackParamList,
-        JobsStackParamList {}
+        JobRootStackParamList {}
   }
 }
 
@@ -17,6 +16,7 @@ declare global {
 export type RootStackParamList = {
   Entry: NavigatorScreenParams<EntryStackParamList> | undefined;
   Main: NavigatorScreenParams<MainBottomTabParamList> | undefined;
+  Jobs: NavigatorScreenParams<JobRootStackParamList> | undefined;
 };
 
 // Screen Routes
@@ -27,16 +27,27 @@ export type EntryStackParamList = {
 
 // Main Bottom Navigators
 export type MainBottomTabParamList = {
-  "My Profile": NavigatorScreenParams<ProfileStackParamList> | undefined;
-  "Search Jobs": NavigatorScreenParams<JobsStackParamList> | undefined;
+  "My Profile": undefined;
+  "Search Jobs": undefined;
 };
 
-// Screen Routes
-export type ProfileStackParamList = {
-  "Profile Screen": undefined;
+// // Screen Routes
+// export type ProfileStackParamList = {
+//   "Profile Screen": undefined;
+// };
+
+// Job Stack Navigator
+export type JobRootStackParamList = {
+  Data: undefined;
 };
 
-// Screen Routes
-export type JobsStackParamList = {
-  "Jobs Details": undefined;
-};
+// // Screen Routes
+// export type JobsStackParamList = {
+//   Details: undefined;
+// };
+
+// export type JobsData = {
+//   job_id: string;
+//   job_title: string;
+//   job_country: string;
+// };

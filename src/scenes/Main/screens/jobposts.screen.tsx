@@ -2,10 +2,15 @@ import { Image, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { CompanyInfo, Container, JobTitle } from "../styles/jobs.styled";
 import { IJobPostsProps } from "../../../stores/interface/jobs-screen.interface";
 import { checkImageURL } from "../../../@core/utils";
+import { useNavigation } from "@react-navigation/native";
 
 export const JobPosts: React.FC<IJobPostsProps> = ({ item }) => {
+  const navigation = useNavigation();
+
   return (
-    <TouchableOpacity>
+    <TouchableOpacity
+      onPress={() => navigation.navigate("Jobs", { screen: "Data" })}
+    >
       <Container>
         <Image
           source={{

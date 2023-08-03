@@ -1,9 +1,15 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { EntryNavigator } from "./entry.navigator";
-import { MainBottomTabParamList, RootStackParamList } from "../../types";
+import {
+  JobRootStackParamList,
+  MainBottomTabParamList,
+  RootStackParamList,
+} from "../../types";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { View, Text } from "react-native";
 import { JobsScreen, ProfileScreen } from "../../scenes/Main";
+import JobDetails from "../../scenes/Main/screens/job-details.screen";
+import { createStackNavigator } from "@react-navigation/stack";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -27,6 +33,14 @@ export function RootNavigator() {
           headerShown: false,
         }}
       />
+
+      <Stack.Screen
+        name="Jobs"
+        component={JobStackNavigator}
+        options={{
+          headerShown: false,
+        }}
+      />
     </Stack.Navigator>
   );
 }
@@ -39,5 +53,15 @@ const MainBottomTabNavigator = () => {
       <BottomTab.Screen name="My Profile" component={ProfileScreen} />
       <BottomTab.Screen name="Search Jobs" component={JobsScreen} />
     </BottomTab.Navigator>
+  );
+};
+
+const JobStack = createStackNavigator<JobRootStackParamList>();
+
+const JobStackNavigator = () => {
+  return (
+    <JobStack.Navigator>
+      <JobStack.Screen name="Data" component={JobDetails} />
+    </JobStack.Navigator>
   );
 };

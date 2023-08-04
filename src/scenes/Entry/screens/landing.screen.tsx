@@ -27,7 +27,7 @@ export default () => {
           source={require("../../../../assets/Landing-Image.png")}
         />
         <Footer>
-          <MainText>Find asur</MainText>
+          <MainText>Find Your</MainText>
           <HightLighted>Dream Job</HightLighted>
           <MainText>Here!</MainText>
           <SubTitle>
